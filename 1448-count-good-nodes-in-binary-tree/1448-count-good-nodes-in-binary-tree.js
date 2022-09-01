@@ -13,14 +13,14 @@
 var goodNodes = function(root) {
     
     let total = 0
-    const a = (node, greatest) => {
+    const countGoodNodes = (node, greatest) => {
         if (!node) return
         if (node.val >= greatest) total++
-        a(node.left, Math.max(node.val, greatest))
-        a(node.right, Math.max(node.val, greatest))
+        countGoodNodes(node.left, Math.max(node.val, greatest))
+        countGoodNodes(node.right, Math.max(node.val, greatest))
     }
     
-    a(root, -100001)
+    countGoodNodes(root, -100001)
     
     return total
 };
