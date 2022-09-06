@@ -17,7 +17,6 @@ var pruneTree = function(root) {
         
         const leftHasOne = traverseTree(node.left)
         const rightHasOne = traverseTree(node.right)
-        console.log(node.val, node.left?.val, node.right?.val, leftHasOne, rightHasOne)
         
         if (!leftHasOne) node.left = null
         if (!rightHasOne) node.right = null
